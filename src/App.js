@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Shop } from "./pages/shop/shop";
 import { Cart } from "./pages/cart/cart";
+import { ShopContextProvider } from './context/shop-context';
 
-//23:50
+//watch from 31:00 before processing tutor said nesscary to under react context api. watch a video explaining it
+
 
 function App() {
   return (
     <div className="App">
+        <ShopContextProvider>
         <Router>
           <Navbar />
           <Routes>
@@ -16,6 +19,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </Router>
+        </ShopContextProvider>
     </div>
   );
 }
